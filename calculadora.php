@@ -1,21 +1,18 @@
 <?php
-$operacio = $_POST['op'];
 $primerNumero = $_POST['n1'];
 $segonNumero = $_POST['n2'];
+$operacio = $_POST['op'];
 
-if ($operacio == "s") {
-    $resultat = $primerNumero + $segonNumero;
-} else if ($operacio == "r") {
-    $resultat = $primerNumero - $segonNumero;
-} else if ($operacio == "m") {
-    $resultat = $primerNumero * $segonNumero;
-} else if ($operacio == "d") {
-    if ($segonNumero != 0) {
-        $resultat = $primerNumero / $segonNumero;
-    } else {
-        $resultat = "Error";
+function calcular($operacio, $a, $b) {
+    if ($operacio == "s") return $a + $b;
+    else if ($operacio == "r") return $a - $b;
+    else if ($operacio == "m") return $a * $b;
+    else if ($operacio == "d") {
+        if ($b != 0) return $a / $b;
+        else return "Error";
     }
 }
 
+$resultat = calcular($operacio, $primerNumero, $segonNumero);
 echo $resultat;
 ?>
