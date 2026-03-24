@@ -17,4 +17,11 @@ function calcular($operacio, $a, $b) {
             return "Error: operació desconeguda";
     }
 }
+
+$primerNumero = $_POST['n1'];
+$segonNumero = $_POST['n2'];
+$operacio = $_POST['op'];
+
+$resultat = calcular($operacio, $primerNumero, $segonNumero);
+echo $resultat;
 ?>
